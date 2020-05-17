@@ -1,0 +1,102 @@
+[
+  {
+    "estado": "minas gerais",
+    "cidade": "contagem"
+  },
+  {
+    "estado": "minas gerais",
+    "cidade": "betim"
+  },
+  {
+    "estado": "minas gerais",
+    "cidade": "belo horizonte"
+  },
+  {
+    "estado": "são paulo",
+    "cidade": "campinas"
+  },
+  {
+    "estado": "são paulo",
+    "cidade": "hortolândia"
+  },
+  {
+    "estado": "são paulo",
+    "cidade": "são paulo"
+  },
+  {
+    "estado": "santa catarina",
+    "cidade": "florianópolis"
+  },
+  {
+    "estado": "rio de janeiro",
+    "cidade": "rio de janeiro"
+  },
+  {
+    "estado": "paraná",
+    "cidade": "curitiba"
+  },
+  {
+    "estado": "minas gerais",
+    "cidade": "uberlândia"
+  },
+  {
+    "estado": "bahia",
+    "cidade": "salvador"
+  },
+  {
+    "estado": "são paulo",
+    "cidade": "guarulhos"
+  },
+  {
+    "estado": "rio grande do sul",
+    "cidade": "porto alegre"
+  },
+  {
+    "estado": "pernambuco",
+    "cidade": "recife"
+  },
+  {
+    "estado": "rio grande do norte",
+    "cidade": "natal"
+  },
+  {
+    "estado": "distrito federal",
+    "cidade": "brasília"
+  },
+  {
+    "estado": "santa satarina",
+    "cidade": "joinville"
+  },
+  {
+    "estado": "são paulo",
+    "cidade": "sorocaba"
+  },
+  {
+    "estado": "santa catarina",
+    "cidade": "blumenau"
+  },
+  {
+    "estado": "espírito santo",
+    "cidade": "vitória"
+  },
+  {
+    "estado": "ceará",
+    "cidade": "fortaleza"
+  },
+  {
+    "estado": "amazonas",
+    "cidade": "manaus"
+  },
+  {
+    "estado": "paraná",
+    "cidade": "londrina"
+  },
+  {
+    "estado": "sergipe",
+    "cidade": "aracaju"
+  },
+  {
+    "estado": "maranhão",
+    "cidade": "são luís"
+  }
+]
