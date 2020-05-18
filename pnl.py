@@ -14,7 +14,7 @@ lst_stop_caracters = util.listar_stop_caracters()
 
 
 def extrair_palavras():
-    """Pesquisa palavras"""
+    """Pesquisa palavras e extrai por vaga"""
     util.log_linha()
     util.log('extrair_palavras', None)
 
@@ -108,30 +108,35 @@ def extrair_palavras():
     arq_json.write(txt_json)
     arq_json.close()
 
-    '''
+    return dic_palavra
 
-    arq_json = util.open_write('palavras.json', None)
-    txt_json = json.dumps(dic_vaga_palavra, ensure_ascii=False)
-    arq_json.write(txt_json)
-    arq_json.close()
-    '''
-    '''
-    print(len(lst_vaga_palavra), '-', len(lst_vaga))
-    print('------------------------------------------')
-    for termo in dic_palavra: #['sql','power','oracle','server','etl','intelligence','learning','machine','business','pl','sql']:
-        proximidade = 1
-        peso_relacao = 0.5
-        lst = dic_palavra[termo]['+'+str(proximidade)]
-        cnt = Counter(lst)
-        qtd = dic_palavra[termo]['qtd']
-        if qtd > 50:
-            #qtdmin = int(qtd/(100/proximidade))
-            qtdmin = int(qtd * peso_relacao)
-            lstmin = [i for i in cnt.items() if i[1]>qtdmin]
-            if len(lstmin) > 0:
-                print('Termo {} - Qtd Termo {} - Proximidade {} - Qtd Min {}'.format(termo, qtd, '+-'+str(proximidade), qtdmin))
-                print(sorted(lstmin, key=lambda x: x[1], reverse=True))
-                print('------------------------------------------')
-    '''
 
-extrair_palavras()
+dic_termos = extrair_palavras()
+
+util.log_linha()
+util.log('PNL', 'Proximidade 1 (seguinte)')
+for termo in dic_termos:
+    proximidade = 1
+    peso_relacao = 0.8
+    lst = dic_termos[termo]['+' + str(proximidade)]
+    cnt = Counter(lst)
+    qtd = dic_termos[termo]['qtd']
+    if qtd > 50:
+        qtdmin = int(qtd * peso_relacao)
+        lstmin = [i for i in cnt.items() if i[1] > qtdmin]
+        if len(lstmin) > 0:
+            print('Termo {} - Qtd Termo {} '.format(termo, qtd), sorted(lstmin, key=lambda x: x[1], reverse=True))
+
+util.log_linha()
+util.log('PNL', 'Proximidade 5 (anteriores e seguintes)')
+for termo in ['sql','power','oracle','server','etl','intelligence','learning','machine','business','qlik','metodologias','graduação']:
+    proximidade = 5
+    peso_relacao = 0.1
+    lst = dic_termos[termo]['+-' + str(proximidade)]
+    cnt = Counter(lst)
+    qtd = dic_termos[termo]['qtd']
+    qtdmin = int(qtd * peso_relacao)
+    lstmin = [i for i in cnt.items() if i[1] > qtdmin]
+    if len(lstmin) > 0:
+        print('Termo {} - Qtd Termo {} '.format(termo, qtd), sorted(lstmin, key=lambda x: x[1], reverse=True))
+        print('')
